@@ -13,10 +13,10 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only':True,'min_length':8}}
 
     def create(self, validated_data):
-        #is_student = validated_data.pop('is_student')
+        is_student = validated_data.pop('is_student')
         user = get_user_model().objects.create_user(**validated_data)
-        #user.is_student = is_student
-        #user.save()
+        user.is_student = is_student
+        user.save()
         return user
 
 # @permission_classes([IsAuthenticated])
