@@ -4,7 +4,7 @@ from .models import Certificate
 # Register your models here.
 
 class CertificateAdmin(admin.ModelAdmin):
-    list_display = ('name','created_at','update_at')
+    list_display = ('name','created_at','updated_at')
     search_fields = ('name',)
 
 admin.site.register(Certificate,CertificateAdmin)

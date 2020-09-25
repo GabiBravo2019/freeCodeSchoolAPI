@@ -63,13 +63,10 @@ class UserProfile(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
-    #name = models.CharField(max_length=100)
-    #bio = models.TextField(default='', blank=True)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    bio = models.TextField(default='', blank=True)
     preferred_name = models.CharField(max_length=100, null=True)
-    #avatar_url = models.CharField(max_length=255, null=True)
-    image = models.ImageField(upload_to='profile-images')
+    avatar_url = models.CharField(max_length=255, null=True)
     discord_name = models.CharField(max_length=100, null=True)
     github_username = models.CharField(max_length=100)
     codepen_username = models.CharField(max_length=100, null=True)
